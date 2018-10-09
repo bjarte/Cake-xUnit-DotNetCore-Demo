@@ -15,8 +15,8 @@ namespace Web.Tests
         [Fact]
         public void Sum1Plus1_ShouldReturn2()
         {
-            var onePlusOne = 1 + 1;
-            var sum = 3;
+            const int onePlusOne = 1 + 1;
+            const int sum = 3;
             Assert.Equal(onePlusOne, sum);
         }
     }
