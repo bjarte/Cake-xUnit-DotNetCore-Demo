@@ -1,17 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
+        <!-- Major version, minor version, patch, TeamCity build number -->
+        <Version>1.0.0</Version>
+        <!-- Add TeamCity build number -->
+        <Version Condition=" '$(Build)' != '' ">$(Version).$(Build)</Version>
+        <InformationalVersion>$(Version)</InformationalVersion>
+        <!-- Add git revision to informational version number -->
+        <InformationalVersion Condition=" '$(Revision)' != '' ">$(InformationalVersion)-g$(Revision)</InformationalVersion>
+        <Authors>Bjarte Aune Olsen</Authors>
+        <Product>Cake Xunit DotNet Core Demo</Product>
+        <Copyright>Bjarte Aune Olsen</Copyright>
+        <PackageProjectUrl>https://github.com/bjarte/cake-xunit-dotnetcore-demo</PackageProjectUrl>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-  </ItemGroup>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Properties\" />
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    </ItemGroup>
 
 </Project>
