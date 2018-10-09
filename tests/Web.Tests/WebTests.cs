@@ -16,7 +16,7 @@ namespace Web.Tests
         public void Sum1Plus1_ShouldReturn2()
         {
             const int onePlusOne = 1 + 1;
-            const int sum = 3;
+            const int sum = 2;
             Assert.Equal(onePlusOne, sum);
         }
     }
